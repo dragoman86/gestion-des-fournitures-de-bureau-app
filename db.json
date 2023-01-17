@@ -1,0 +1,52 @@
+{
+  "products": [
+    {
+      "id": 1,
+      "name_product": "Rame Papier A4",
+      "quatity_product": "50",
+      "reference_product": "A4-528",
+      "detail_product": "Rame Papier EVERYDAY - Format: A4 - Dimension: 21 x 29,7 cm - Nombre de Feuilles: 500 Feuilles - Grammage: 70G - Papier extra blanc, idéal pour une utilisation intensif au bureau."
+    },
+    {
+      "id": 2,
+      "name_product": "Bobine papier Thermique",
+      "quatity_product": "20",
+      "reference_product": "56x20 mm",
+      "detail_product": "Compatible avec les imprimantes thermiques sur une large gamme d'appareils en audiologie, vestibulaire et rhinomanométriee.."
+    }
+  ],
+  "fournisseurs": [
+    {
+      "id": 1,
+      "name_fournisseur": "John Doe",
+      "email_fournisseur": "yass@gmail.com",
+      "tel_fournisseur": "1234",
+      "fax_fournisseur": "72 255 469",
+      "adress_fournisseur": "rue el fell 5412 tunis center"
+    },
+    {
+      "id": 1,
+      "name_fournisseur": "John Doe",
+      "email_fournisseur": "yass@gmail.com",
+      "tel_fournisseur": "1234",
+      "fax_fournisseur": "72 255 469",
+      "adress_fournisseur": "rue el fell 5412 tunis center"
+    },	
+    {
+      "id": 1,
+      "name_fournisseur": "John Doe",
+      "email_fournisseur": "yass@gmail.com",
+      "tel_fournisseur": "1234",
+      "fax_fournisseur": "72 255 469",
+      "adress_fournisseur": "rue el fell 5412 tunis center"
+    },
+    {
+      "id": 1,
+      "name_fournisseur": "John Doe",
+      "email_fournisseur": "yass@gmail.com",
+      "tel_fournisseur": "1234",
+      "fax_fournisseur": "72 255 469",
+      "adress_fournisseur": "rue el fell 5412 tunis center"
+    }
+  ]
+}
