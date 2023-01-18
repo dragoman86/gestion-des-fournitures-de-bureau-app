@@ -6,7 +6,7 @@ import ConsultDemande from "../Components/ConsultDemande";
 export const Home = () => {
     return (
     <>
-        <h1>Home Page</h1>
+        <h1 variant="primary" >Administration Fournitures</h1>
         <ConsultDemande />
         <ConsultStock />
         <ConsultFournisseur />

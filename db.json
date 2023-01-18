@@ -18,35 +18,35 @@
   "fournisseurs": [
     {
       "id": 1,
-      "name_fournisseur": "John Doe",
-      "email_fournisseur": "yass@gmail.com",
-      "tel_fournisseur": "1234",
+      "name_fournisseur": "Sihem HASSINE",
+      "email_fournisseur": "Sihem.hassine@gmail.com",
+      "tel_fournisseur": "55 247 859",
       "fax_fournisseur": "72 255 469",
       "adress_fournisseur": "rue el fell 5412 tunis center"
     },
     {
-      "id": 1,
-      "name_fournisseur": "John Doe",
-      "email_fournisseur": "yass@gmail.com",
-      "tel_fournisseur": "1234",
-      "fax_fournisseur": "72 255 469",
-      "adress_fournisseur": "rue el fell 5412 tunis center"
-    },	
-    {
-      "id": 1,
-      "name_fournisseur": "John Doe",
-      "email_fournisseur": "yass@gmail.com",
-      "tel_fournisseur": "1234",
-      "fax_fournisseur": "72 255 469",
-      "adress_fournisseur": "rue el fell 5412 tunis center"
+      "id": 2,
+      "name_fournisseur": "Sami JBARA",
+      "email_fournisseur": "sami.jbara@hotmail.com",
+      "tel_fournisseur": "27 874 958",
+      "fax_fournisseur": "71 487 965",
+      "adress_fournisseur": "rue el belvedere 1002 Tunis"
     },
     {
-      "id": 1,
-      "name_fournisseur": "John Doe",
-      "email_fournisseur": "yass@gmail.com",
-      "tel_fournisseur": "1234",
+      "id": 3,
+      "name_fournisseur": "Salim AZOUZ",
+      "email_fournisseur": "Azouz52@gmail.com",
+      "tel_fournisseur": "22 478 951",
+      "fax_fournisseur": "71 487 962",
+      "adress_fournisseur": "rue el basatine mourouj 4 1097 Tunis"
+    },
+    {
+      "id": 4,
+      "name_fournisseur": "Mohsen ALI",
+      "email_fournisseur": "Mohsine987@gmail.com",
+      "tel_fournisseur": "51 251 897",
       "fax_fournisseur": "72 255 469",
-      "adress_fournisseur": "rue el fell 5412 tunis center"
+      "adress_fournisseur": "rue socrate cité el amel Nabeul 8075"
     }
   ]
 }
