@@ -32,7 +32,7 @@ const initialeState = {
       case "GET_FOURNISSEUR_BY_ID":
         return {
           ...state,
-          fournisseur: action.payload,
+          fournisseurs: action.payload,
         };
   
       default:

@@ -1,8 +1,11 @@
 import { Container, Nav, Navbar, Badge } from 'react-bootstrap';
-import { Link } from 'react-router-dom';
+import { Link} from 'react-router-dom';
+
 
 const NavBar = () => {
     return (
+       
+        
         <Navbar style={{ marginBottom:'50px' }} bg="primary" variant="dark">
         <Container>
         <svg style={{ color:'white' }} xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-calendar2-check" viewBox="0 0 16 16">
@@ -17,13 +20,15 @@ const NavBar = () => {
           </h1>
           </Navbar.Brand>
           <Nav className="me-auto">
-            <Link to='/'>Acceuil</Link>
+            <Link to='/home'>Acceuil</Link>
             <Link to='demandes' >Demandes</Link>
             <Link to='stock' >Stock</Link>
             <Link to='fournisseurs'>Fournisseurs</Link>
+            <Link to='/'>deconnecter</Link>
           </Nav>
         </Container>
       </Navbar>
+      
     )
 }
 

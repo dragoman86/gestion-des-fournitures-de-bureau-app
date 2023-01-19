@@ -2,6 +2,14 @@
   text-align: center;
 }
 
+.addFourni > input{
+  margin-top: 2rem;
+}
+
+Button{
+  width: 10rem;
+}
+
 .me-auto a {
   color: white;
   text-decoration: none;

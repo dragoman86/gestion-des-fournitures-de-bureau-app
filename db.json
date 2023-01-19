@@ -3,35 +3,26 @@
     {
       "id": 1,
       "name_product": "Rame Papier A4",
-      "quatity_product": "50",
+      "quantity_product": "50",
       "reference_product": "A4-528",
       "detail_product": "Rame Papier EVERYDAY - Format: A4 - Dimension: 21 x 29,7 cm - Nombre de Feuilles: 500 Feuilles - Grammage: 70G - Papier extra blanc, idéal pour une utilisation intensif au bureau."
     },
     {
       "id": 2,
       "name_product": "Bobine papier Thermique",
-      "quatity_product": "20",
+      "quantity_product": "20",
       "reference_product": "56x20 mm",
       "detail_product": "Compatible avec les imprimantes thermiques sur une large gamme d'appareils en audiologie, vestibulaire et rhinomanométriee.."
     }
   ],
+  "user": [
+    {
+      "login": "admin",
+      "password": "admin",
+      "type": "admin"
+    }
+  ],
   "fournisseurs": [
-    {
-      "id": 1,
-      "name_fournisseur": "Sihem HASSINE",
-      "email_fournisseur": "Sihem.hassine@gmail.com",
-      "tel_fournisseur": "55 247 859",
-      "fax_fournisseur": "72 255 469",
-      "adress_fournisseur": "rue el fell 5412 tunis center"
-    },
-    {
-      "id": 2,
-      "name_fournisseur": "Sami JBARA",
-      "email_fournisseur": "sami.jbara@hotmail.com",
-      "tel_fournisseur": "27 874 958",
-      "fax_fournisseur": "71 487 965",
-      "adress_fournisseur": "rue el belvedere 1002 Tunis"
-    },
     {
       "id": 3,
       "name_fournisseur": "Salim AZOUZ",
@@ -47,6 +38,14 @@
       "tel_fournisseur": "51 251 897",
       "fax_fournisseur": "72 255 469",
       "adress_fournisseur": "rue socrate cité el amel Nabeul 8075"
+    },
+    {
+      "name_fournisseur": "Sami Laroussi",
+      "email_fournisseur": "sammi@hotmail.com",
+      "tel_fournisseur": "22478569",
+      "fax_fournisseur": "71487777",
+      "adress_fournisseur": "rue el intilaka 1024 tunis",
+      "id": 5
     }
   ]
 }
