@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { Col, Row, Button, Card, Form} from 'react-bootstrap';
+import { Modal, InputGroup, Row, Button, Card, Form} from 'react-bootstrap';
 import { getFournisseur, addFournisseur, deleteFournisseur } from "../../Redux/Actions/FournisseursActions/FournisseurAction";
 
 function FournisseursList() {
@@ -15,6 +15,16 @@ function FournisseursList() {
   });
   const fournisseurs = useSelector((state) => state.fournisseurReducer.fournisseurs);
   
+  //search by name fournisseur
+  const [search, setSearch] = useState("");
+  const filteredFournisseur = fournisseurs.filter((fournisseur) => {
+  return fournisseur.name_fournisseur.toLowerCase().includes(search.toLowerCase())})
+
+  const [show, setShow] = useState(false);
+
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
   useEffect(() => {
     dispatch(getFournisseur(dispatch));
   }, []);
@@ -23,33 +33,58 @@ function FournisseursList() {
     setFournisseur({ ...fournisseur, [e.target.name]: e.target.value });
   };
 
+
+
   return (
     <div>
-      <div  className="addFourni d-flex justify-content-around" style={{ width:"35%", margin:'auto' }}>
-        <Row>
-          <Form.Control type="text" placeholder="Nom Fournisseur" name='name_fournisseur' onChange={handleChanges}/>
+      <Button style={{ marginBottom:'2rem' }} variant="primary" onClick={handleShow}>
+        Ajouter un nouveau Fournisseur
+      </Button>
+
+      <Modal
+        show={show}
+        onHide={handleClose}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Ajout Fournisseur</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        <Form.Control type="text" placeholder="Nom Fournisseur" name='name_fournisseur' onChange={handleChanges}/>
           <Form.Control placeholder="E-mail Fournisseur" type='email' name='email_fournisseur' onChange={handleChanges} />
           <Form.Control placeholder="Tel Fournisseur" type='text' name='tel_fournisseur' onChange={handleChanges} />
           <Form.Control placeholder="Fax Fournisseur" type='text' name='fax_fournisseur' onChange={handleChanges} />
           <Form.Control placeholder="Adresse Fournisseur" type='text' name='adress_fournisseur' onChange={handleChanges} />
-      </Row>
-      <Button 
-        onClick={() => {
-          dispatch(addFournisseur(fournisseur, dispatch));
-        }}
-      >
-        Add Fournisseur
-      </Button>
-      </div>
-      {fournisseurs.map((fournisseur) => {
+          <Button
+            onClick={() => {
+                dispatch(addFournisseur(fournisseur, dispatch));
+              }} 
+            className='primary' 
+            style={{ margin:'2rem' }}>Ajout Fournisseur</Button>
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose}>
+            Fermer
+          </Button>
+        </Modal.Footer>
+      </Modal>
+      <InputGroup style={{width:'80%', margin:'auto'}} className="mb-3 primary">
+        <Form.Control
+          placeholder="Recherche..."
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+          onChange={(event) => setSearch(event.target.value)}
+        />
+        <InputGroup.Text style={{color:'white'}} className='bg-primary' id="basic-addon2">Rechercher par "Nom de Fournisseur"</InputGroup.Text>
+      </InputGroup>
+      <Row style={{ width:'80%',margin:'auto' }} >
+      {filteredFournisseur.map((fournisseur) => {
         return (
-          <div key={fournisseur.id} className="d-flex justify-content-around" style={{ flexWrap:'wrap'}}>
-          <div className="d-flex justify-content-around d-inline p-2" style={{ flexWrap:'wrap', width: "18rem", marginTop:"2rem" }}>
-          <Col>
-             <Card className="bg-primary" style={{ color:"white"}}>
-                <Card.Img variant="top" src="fourni5.jpg" style={{ width: "18rem" }}/>
-                <Card.Body>
-                <Card.Title>{fournisseur.name_fournisseur}</Card.Title>
+             <Card key={fournisseur.id} className="text-primary" variant="outline-primary" style={{ margin:'2rem', width: "18rem"}}>
+                <Card.Img variant="top" src="fourni3.jpg" />
+                <Card.Body variant="outline-primary">
+                <Card.Title >{fournisseur.name_fournisseur}</Card.Title>
                 <Card.Text>
                 <p>{fournisseur.email_fournisseur}</p>
                 <p>{fournisseur.tel_fournisseur}</p>
@@ -57,20 +92,18 @@ function FournisseursList() {
                 <p>{fournisseur.adress_fournisseur}</p>
                 </Card.Text>
                 </Card.Body>
-                <Card.Footer>
-                    <Button variant="outline-light" onClick={() => dispatch(deleteFournisseur(fournisseur.id, dispatch))}>
-                          Supprimer Fournisseur
+                <Card.Footer variant="bg-primary">
+                    <Button variant="outline-primary" onClick={() => dispatch(deleteFournisseur(fournisseur.id, dispatch))}>
+                          Supprimer
                     </Button>
                     <Link to={`/fournisseurs/${fournisseur.id}`}>
-                    <Button style={{ marginTop:"10px" }} variant="outline-light">Details</Button>
+                    <Button style={{ marginTop:"10px" }} variant="outline-primary">Details</Button>
                     </Link>
                 </Card.Footer>
               </Card>
-              </Col>
-          </div>
-          </div>
        ) } )
       }
+      </Row>
       
     </div>
   );

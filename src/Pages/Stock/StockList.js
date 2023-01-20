@@ -1,9 +1,8 @@
-import { InputGroup, Table, Modal, Form, Button, Card, Row } from 'react-bootstrap';
+import { Accordion, InputGroup, Table, Modal, Form, Button, Card, Row } from 'react-bootstrap';
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { addQuantity, deleteProduct, getProduct, addProduct } from "../../Redux/Actions/StockAction/StockAction";
-
 
 const StockList = () => {
     const dispatch = useDispatch();
@@ -20,18 +19,22 @@ const StockList = () => {
     const handleShow = () => setShow(true);
       
     const products = useSelector((state) => state.stockReducer.products);
-
+    
     useEffect(() => {
         dispatch(getProduct(dispatch));
       }, []);
     
     const handleChanges = (e) => {
         setProduct({ ...product, [e.target.name]: e.target.value });
-      };  
+      };
+    //search by name product
+      const [query, setQuery] = useState("");
+      const filtredProduct = products.filter((product) => {
+      return product.name_product.toLowerCase().includes(query.toLowerCase())})
 
     return(
         <>
-        <div>
+      <div>
             <Button style={{ marginBottom:'2rem' }}
                     variant="primary" onClick={handleShow}>
                      Ajouter un nouveau Produit
@@ -63,17 +66,14 @@ const StockList = () => {
       </Modal>
     </div>
     <h1>Etat du Stock</h1>
-    <InputGroup className="mb-3" 
-        style={{width:'80%', margin:'auto'}}
-        >
-        <Button 
-        variant="outline-primary" id="button-addon1">
-          Rechercher
-        </Button>
+    <InputGroup style={{width:'80%', margin:'auto'}} className="mb-3 primary">
         <Form.Control
-          aria-label="Example text with button addon"
-          aria-describedby="basic-addon1"
+          placeholder="Recherche..."
+          aria-label="Recipient's username"
+          aria-describedby="basic-addon2"
+          onChange={(event) => setQuery(event.target.value)}
         />
+        <InputGroup.Text style={{color:'white'}} className='bg-primary' id="basic-addon2">Rechercher par "Nom de Produit"</InputGroup.Text>
       </InputGroup>
     <div style={{ width:'80%', margin:'auto' }}>
     <Table className='primary' striped bordered hover>
@@ -82,44 +82,53 @@ const StockList = () => {
           <th>ID</th>
           <th>Quantité</th>
           <th>Nom de Produit</th>
+          <th>Référence de produit</th>
           <th>Détails de produit</th>
         </tr>
       </thead>
       <tbody>
-      {products.map((product) => {
+
+      {filtredProduct.map((product) => {
             return (
                 <>
         <tr>
           <td key={product.id}>{product.id}</td>
           <td>{product.quantity_product}</td>
           <td>{product.name_product}</td>
-          <td>{product.detail_product}</td>
+          <td>{product.reference_product}</td>
+          <td>
+          <Accordion defaultActiveKey="1">
+                <Accordion.Item eventKey="0">
+                  <Accordion.Header>Plus de details</Accordion.Header>
+                  <Accordion.Body>
+                  {product.detail_product}
+                  </Accordion.Body>
+                </Accordion.Item>
+              </Accordion> 
+          </td>
           </tr>
           </>
         )})}  
      </tbody>
         </Table>
         </div>
-
         <Row> 
-        {products.map((product) => {
+        {filtredProduct.map((product) => {
         return (              
           <Card
             key={product.id}
             style={{ margin:'5rem', color:'whitesmoke', width: '18rem' }}
             className="mb-2 bg-primary"
           >
-            <Card.Header>Quantités : <span 
+            <Card.Header>Quantités : <span
             style={{ fontSize:'2rem'}}
-            >{product.quantity_product}</span> unités</Card.Header>
+            >{product.quantity_product}
+            </span> unités</Card.Header>
             <Card.Body>
               <Card.Title>{product.name_product}</Card.Title>
               <Card.Text>
               Réf : {product.reference_product}
-              </Card.Text>
-              <Card.Text>
-              Détail : {product.detail_product}
-              </Card.Text>
+              </Card.Text>               
             </Card.Body>
             <Card.Footer>
                     <Button variant="outline-light" onClick={() => dispatch(addQuantity(product.quantity_product, dispatch))}>

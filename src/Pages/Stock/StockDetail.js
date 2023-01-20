@@ -16,7 +16,8 @@ const StockDetail = () => {
   
   return (
     <>
-    <h1>Quantité du produit disponible est :{product.quantity_product}</h1>  
+    <h1>Quantité du produit disponible est :{product.detail_product}</h1> 
+     
     </>
   )
 }

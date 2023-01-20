@@ -34,6 +34,13 @@
       "reference_product": "461568",
       "detail_product": "\nBrosse magnétique 1er prix pour tableau blanc - rechargeable",
       "id": 5
+    },
+    {
+      "name_product": "Cartouche laser HP 42A Q5942A",
+      "quantity_product": "75",
+      "reference_product": "S260683",
+      "detail_product": "Toner HP 42 A Q5942A couleur noir. Capacité d'impression 10000 pages.\nToner pour imprimantes HP LaserJet 4240, 4250, 4350\n\nHewlett-Packard - l'un des principaux fournisseurs mondiaux de solutions et de services informatiques et d'imagerie - se mobilise pour simplifier l'accès de la technologie et de ses multiples avantages aux consommateurs et aux entreprises. La société vise à fournir à ses clients des produits et des services d'une meilleure qualité et d'une plus grande valeur possible, pour conquérir et préserver leur confiance et leur fidélité.",
+      "id": 6
     }
   ],
   "user": [
@@ -67,6 +74,30 @@
       "fax_fournisseur": "71487777",
       "adress_fournisseur": "rue el intilaka 1024 tunis",
       "id": 5
+    },
+    {
+      "name_fournisseur": "Yasmine SOUISSI",
+      "email_fournisseur": "yasmine@voila.fr",
+      "tel_fournisseur": "0033 22 54 78 59 35",
+      "fax_fournisseur": "0033 22 44 77 87 78",
+      "adress_fournisseur": "rue el menzah V , immeub 5 appt 14 1092 , Ariana",
+      "id": 6
+    },
+    {
+      "name_fournisseur": "Karim BENZEMMA",
+      "email_fournisseur": "karim.benzema@yahoo.de",
+      "tel_fournisseur": "0033 547 848 541",
+      "fax_fournisseur": "0033 547 895 412",
+      "adress_fournisseur": "rue barcelone, immeub 2 , appt 11, paris",
+      "id": 7
+    },
+    {
+      "name_fournisseur": "Souad ben Jmail",
+      "email_fournisseur": "benjmail@gmail.com",
+      "tel_fournisseur": "22478510",
+      "fax_fournisseur": "71487523",
+      "adress_fournisseur": "rue el morjen, batiment 20 g 11, 1002 belvédère",
+      "id": 8
     }
   ]
 }

@@ -13,8 +13,8 @@ const NavBar = () => {
         </svg>
           <Navbar.Brand href="#home">
           
-          <h1>
-          <Badge bg="primary">Gestion des Fournitures de Bureau</Badge>
+          <h1 >
+          <Badge style={{fontFamily: 'Cairo, sans-serif'}} >Gestion des Fournitures de Bureau</Badge>
           </h1>
           </Navbar.Brand>
           <Nav className="me-auto">
