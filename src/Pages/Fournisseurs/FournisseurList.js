@@ -82,7 +82,7 @@ function FournisseursList() {
       {filteredFournisseur.map((fournisseur) => {
         return (
              <Card key={fournisseur.id} className="text-primary" variant="outline-primary" style={{ margin:'2rem', width: "18rem"}}>
-                <Card.Img variant="top" src="fourni3.jpg" />
+                <Card.Img variant="top" src="fourni5.jpg" />
                 <Card.Body variant="outline-primary">
                 <Card.Title >{fournisseur.name_fournisseur}</Card.Title>
                 <Card.Text>

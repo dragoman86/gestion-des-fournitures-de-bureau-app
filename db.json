@@ -98,6 +98,14 @@
       "fax_fournisseur": "71487523",
       "adress_fournisseur": "rue el morjen, batiment 20 g 11, 1002 belvédère",
       "id": 8
+    },
+    {
+      "name_fournisseur": "Hajer KALAI",
+      "email_fournisseur": "hajer@gmail.com",
+      "tel_fournisseur": "23 457 895 ",
+      "fax_fournisseur": "70145984",
+      "adress_fournisseur": "rue el fell cité la colombe 1007 tunis",
+      "id": 9
     }
   ]
 }
