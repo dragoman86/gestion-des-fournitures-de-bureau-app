@@ -4,9 +4,7 @@ import { Link} from 'react-router-dom';
 
 const NavBar = () => {
     return (
-       
-        
-        <Navbar style={{ marginBottom:'50px' }} bg="primary" variant="dark">
+        <Navbar style={{ width:'100%', marginBottom:'50px' }} bg="primary" variant="dark">
         <Container>
         <svg style={{ color:'white' }} xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="currentColor" class="bi bi-calendar2-check" viewBox="0 0 16 16">
             <path d="M10.854 8.146a.5.5 0 0 1 0 .708l-3 3a.5.5 0 0 1-.708 0l-1.5-1.5a.5.5 0 0 1 .708-.708L7.5 10.793l2.646-2.647a.5.5 0 0 1 .708 0z"/>
@@ -27,8 +25,7 @@ const NavBar = () => {
             <Link to='/'>deconnecter</Link>
           </Nav>
         </Container>
-      </Navbar>
-      
+      </Navbar>  
     )
 }
 

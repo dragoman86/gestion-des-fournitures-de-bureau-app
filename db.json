@@ -3,7 +3,7 @@
     {
       "id": 1,
       "name_product": "Rame Papier A4",
-      "quantity_product": "50",
+      "quantity_product": "150",
       "reference_product": "A4-528",
       "detail_product": "Rame Papier EVERYDAY - Format: A4 - Dimension: 21 x 29,7 cm - Nombre de Feuilles: 500 Feuilles - Grammage: 70G - Papier extra blanc, idéal pour une utilisation intensif au bureau."
     },
@@ -13,6 +13,27 @@
       "quantity_product": "20",
       "reference_product": "56x20 mm",
       "detail_product": "Compatible avec les imprimantes thermiques sur une large gamme d'appareils en audiologie, vestibulaire et rhinomanométriee.."
+    },
+    {
+      "name_product": " Enveloppe 110 x 220",
+      "quantity_product": "2500",
+      "reference_product": "DL - 110 x 220 mm",
+      "detail_product": "Enveloppe 110 x 220 mm 1er prix - fenêtre 45x100 - blanche - auto-adhésive - 80g - boîte de 500",
+      "id": 3
+    },
+    {
+      "name_product": "  Enveloppe blanche DL 110 x 220",
+      "quantity_product": "3800",
+      "reference_product": "S323043",
+      "detail_product": "Idéale pour l'envoi de factures, cette enveloppe est opaque afin de garantir la sécurité des informations confidentielles.\nAvec notre enveloppe commerciale blanche Budget, envoyez vos documents du quotidien tels que vos factures ou vos autres documents administratifs Elle est dotée d'une fermeture autocollante avec bande protectrice pour une fermeture facile et une durabilité même en cas de stockage longue durée. Elle dispose d'un grammage de 80 g/m² permettant de limiter vos frais d'envoi. L'intérieur gris perle permet d'assurer la confidentialité du contenu : même en transparence, les informations restent confidentielles. Conçue pour contenir un ou plusieurs feuillets A4 pliés en trois ou A5 pliés en 2, les dimensions de l'enveloppe DL en font un choix classique des entreprises et des particuliers.\nEnveloppe commerciale blanche sans fenêtre",
+      "id": 4
+    },
+    {
+      "name_product": " Brosse magnétique",
+      "quantity_product": "2",
+      "reference_product": "461568",
+      "detail_product": "\nBrosse magnétique 1er prix pour tableau blanc - rechargeable",
+      "id": 5
     }
   ],
   "user": [

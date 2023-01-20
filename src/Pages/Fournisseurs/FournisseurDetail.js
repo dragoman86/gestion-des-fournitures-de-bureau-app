@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router-dom";
-import { getFournisseurById } from '../Redux/Actions/FournisseurAction';
+import { getFournisseurById } from '../../Redux/Actions/FournisseursActions/FournisseurAction';
 
 
 const FournisseurDetail = () => {

@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import { Col, Row, Button, Card, Form} from 'react-bootstrap';
-import { getFournisseur, addFournisseur, deleteFournisseur } from "../Redux/Actions/FournisseurAction";
+import { getFournisseur, addFournisseur, deleteFournisseur } from "../../Redux/Actions/FournisseursActions/FournisseurAction";
 
 function FournisseursList() {
   const dispatch = useDispatch();
@@ -32,7 +32,6 @@ function FournisseursList() {
           <Form.Control placeholder="Tel Fournisseur" type='text' name='tel_fournisseur' onChange={handleChanges} />
           <Form.Control placeholder="Fax Fournisseur" type='text' name='fax_fournisseur' onChange={handleChanges} />
           <Form.Control placeholder="Adresse Fournisseur" type='text' name='adress_fournisseur' onChange={handleChanges} />
-      
       </Row>
       <Button 
         onClick={() => {
@@ -60,7 +59,7 @@ function FournisseursList() {
                 </Card.Body>
                 <Card.Footer>
                     <Button variant="outline-light" onClick={() => dispatch(deleteFournisseur(fournisseur.id, dispatch))}>
-                          Delete Fournisseur
+                          Supprimer Fournisseur
                     </Button>
                     <Link to={`/fournisseurs/${fournisseur.id}`}>
                     <Button style={{ marginTop:"10px" }} variant="outline-light">Details</Button>

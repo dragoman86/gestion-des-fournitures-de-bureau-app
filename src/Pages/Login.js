@@ -3,7 +3,7 @@ import { Form, Alert } from 'react-bootstrap';
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
-import { signIn } from '../Redux/Actions/authActions';
+import { signIn } from '../Redux/Actions/AuthReducer/authActions';
 
 
 function Login() {
