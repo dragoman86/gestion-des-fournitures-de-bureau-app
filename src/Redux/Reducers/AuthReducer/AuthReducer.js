@@ -41,6 +41,15 @@ const initialState = {
           error: action.payload,
           loading: false,
         }; 
+        case "CURRRENT_USER":
+          return {
+            ...state,
+            user: action.payload[0],
+            userType: action.payload[0].type,
+            token: action.payload[0].id,
+            error: null,
+            loading: false,
+          }
       default:
         return state;
     }

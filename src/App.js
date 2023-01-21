@@ -1,5 +1,5 @@
 import './App.css';
-import { Routes, Route} from 'react-router-dom';
+import { Routes, Route } from 'react-router-dom';
 
 import Login from './Pages/Login';
 import NavBar from './Components/NavBar';
@@ -10,22 +10,32 @@ import FournisseursList from './Pages/Fournisseurs/FournisseurList';
 import FournisseurDetail from './Pages/Fournisseurs/FournisseurDetail';
 import Home from './Pages/Home';
 import NoMatch from './Pages/NoMatch';
+import { useDispatch, useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { currentUser } from './Redux/Actions/AuthReducer/authActions';
 
 
 function App() {
-  return (    
+  const token = useSelector(state => state.authReducer.token)
+  const dispatch = useDispatch();
+  
+  useEffect(() => {
+    dispatch(currentUser(dispatch)); 
+  }, []);
+  
+  return (
     <div className="App">
-        <NavBar />
-          <Routes>
-            <Route path='/' element={<Login /> } ></Route>
-            <Route path='/home' element={<Home />} ></Route>
-            <Route path='/stock' element={<StockList />} ></Route>
-            <Route path='/stock/:productId' element={<StockDetail />} ></Route>
-            <Route path='/fournisseurs' element={<FournisseursList />} ></Route>
-            <Route path='/fournisseurs/:fournisseurId' element={<FournisseurDetail />} ></Route>
-            <Route path='*' element={<NoMatch />} ></Route>
-          </Routes>
-        <Footer />
+      <NavBar token={token} />
+      <Routes>
+        <Route path='/' element={<Login />} ></Route>
+        <Route path='/home' element={<Home />} ></Route>
+        <Route path='/stock' element={<StockList />} ></Route>
+        <Route path='/stock/:productId' element={<StockDetail />} ></Route>
+        <Route path='/fournisseurs' element={<FournisseursList />} ></Route>
+        <Route path='/fournisseurs/:fournisseurId' element={<FournisseurDetail />} ></Route>
+        <Route path='*' element={<NoMatch />} ></Route>
+      </Routes>
+      <Footer />
     </div>
   )
 }

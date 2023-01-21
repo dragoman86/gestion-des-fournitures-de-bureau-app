@@ -45,6 +45,7 @@
   ],
   "user": [
     {
+      "id":1,
       "login": "admin",
       "password": "admin",
       "type": "admin"

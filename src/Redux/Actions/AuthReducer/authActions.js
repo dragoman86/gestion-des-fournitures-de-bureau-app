@@ -9,11 +9,12 @@ export const signIn = (user, navigate) => async (dispatch) => {
     // if the request is successful and user exist, dispatch the action to the reducer
     if (res.status === 200) {
       if (res.data.length === 0) {
-        localStorage.setItem("id", res.data[0].id);
         dispatch({ type: "SIGN_IN_ERROR", payload: "Bad credentials" });
       } else {
+        console.log(res.data)
         dispatch({ type: "SIGN_IN", payload: res.data });
         // if the user is an admin, navigate to the home page
+        localStorage.getItem("id")
         if (res.data[0].type === "admin") {
           navigate("/home");
         }

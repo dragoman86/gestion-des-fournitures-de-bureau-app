@@ -4,6 +4,7 @@ export const getFournisseur = () => async (dispatch) => {
   {
     try {
       const response = await axios.get("http://localhost:3000/fournisseurs");
+
       if (response.status === 200) {
         dispatch({ type: "GET_FOURNISSEUR", payload: response.data });
       } else {
@@ -44,6 +45,8 @@ export const deleteFournisseur = (id) => async (dispatch) => {
 export const getFournisseurById = (id) => async (dispatch) => {
   try {
     const response = await axios.get(`http://localhost:3000/fournisseurs/${id}`);
+    console.log(response.data)
+
     if (response.status === 200) {
       dispatch({ type: "GET_FOURNISSEUR_BY_ID", payload: response.data });
     } else {
