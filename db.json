@@ -29,23 +29,23 @@
       "id": 4
     },
     {
-      "name_product": " Brosse magnétique",
-      "quantity_product": "2",
-      "reference_product": "461568",
-      "detail_product": "\nBrosse magnétique 1er prix pour tableau blanc - rechargeable",
+      "name_product": "LOT DE 5 BOITES D'ARCHIVES SUPER DOS10",
+      "quantity_product": "550",
+      "reference_product": "Référence : 3163",
+      "detail_product": "Boite d'archive Dos 10mm - Carton imprimé - Etiquette imprimée sur le dos - Fermeture avec bouton pression - Format : 24 x 32 cm - Couleur Gris",
       "id": 5
     },
     {
-      "name_product": "Cartouche laser HP 42A Q5942A",
-      "quantity_product": "75",
-      "reference_product": "S260683",
-      "detail_product": "Toner HP 42 A Q5942A couleur noir. Capacité d'impression 10000 pages.\nToner pour imprimantes HP LaserJet 4240, 4250, 4350\n\nHewlett-Packard - l'un des principaux fournisseurs mondiaux de solutions et de services informatiques et d'imagerie - se mobilise pour simplifier l'accès de la technologie et de ses multiples avantages aux consommateurs et aux entreprises. La société vise à fournir à ses clients des produits et des services d'une meilleure qualité et d'une plus grande valeur possible, pour conquérir et préserver leur confiance et leur fidélité.",
+      "name_product": "BOITE D'ARCHIVE COULEURS DOS10",
+      "quantity_product": "547",
+      "reference_product": "6192103150721",
+      "detail_product": "Désignation du produit: Boite d’Archive Essential Dos 10cm - Dimension (Lxl) 245x337mm - Matière: Carton rigide  - Epaisseur matière: 1,9mm - Couleur Bleu  – Jaune – Rouge – Vert - Marque: OfficePlast (Purple) - Format à classer 24×32 cm - Capacité 900 feuilles . ",
       "id": 6
     }
   ],
   "user": [
     {
-      "id":1,
+      "id": 1,
       "login": "admin",
       "password": "admin",
       "type": "admin"
@@ -107,6 +107,14 @@
       "fax_fournisseur": "70145984",
       "adress_fournisseur": "rue el fell cité la colombe 1007 tunis",
       "id": 9
+    },
+    {
+      "name_fournisseur": "Mohamed MBAREK",
+      "email_fournisseur": "3azzou@gmail.com",
+      "tel_fournisseur": "29 798 784",
+      "fax_fournisseur": "71 485 798",
+      "adress_fournisseur": "rue el matador Fani, 1092 ariana",
+      "id": 10
     }
   ]
 }

@@ -52,10 +52,10 @@ function FournisseursList() {
         </Modal.Header>
         <Modal.Body>
         <Form.Control type="text" placeholder="Nom Fournisseur" name='name_fournisseur' onChange={handleChanges}/>
-          <Form.Control placeholder="E-mail Fournisseur" type='email' name='email_fournisseur' onChange={handleChanges} />
-          <Form.Control placeholder="Tel Fournisseur" type='text' name='tel_fournisseur' onChange={handleChanges} />
-          <Form.Control placeholder="Fax Fournisseur" type='text' name='fax_fournisseur' onChange={handleChanges} />
-          <Form.Control placeholder="Adresse Fournisseur" type='text' name='adress_fournisseur' onChange={handleChanges} />
+          <Form.Control style={{margin:'1rem'}} placeholder="E-mail Fournisseur" type='email' name='email_fournisseur' onChange={handleChanges} />
+          <Form.Control style={{margin:'1rem'}} placeholder="Tel Fournisseur" type='text' name='tel_fournisseur' onChange={handleChanges} />
+          <Form.Control style={{margin:'1rem'}} placeholder="Fax Fournisseur" type='text' name='fax_fournisseur' onChange={handleChanges} />
+          <Form.Control style={{margin:'1rem'}} placeholder="Adresse Fournisseur" type='text' name='adress_fournisseur' onChange={handleChanges} />
           <Button
             onClick={() => {
                 dispatch(addFournisseur(fournisseur, dispatch));

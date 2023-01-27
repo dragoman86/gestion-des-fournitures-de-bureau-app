@@ -3,6 +3,10 @@
   font-family: 'Roboto Condensed', sans-serif;
 }
 
+th{
+  font-size: x-large;
+}
+
 .addFourni > input{
   margin-top: 2rem;
 }
