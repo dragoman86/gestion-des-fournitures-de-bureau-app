@@ -1,7 +1,6 @@
-import { Accordion, InputGroup, Table, Modal, Form, Button, Card, Row } from 'react-bootstrap';
+import { Accordion, InputGroup, Table, Modal, Form, Button } from 'react-bootstrap';
 import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
 import { addQuantity, deleteProduct, getProduct, addProduct } from "../../Redux/Actions/StockAction/StockAction";
 
 const StockList = () => {
@@ -12,6 +11,7 @@ const StockList = () => {
         reference_product: "",
         detail_product: "",
       });
+      
 
     const [show, setShow] = useState(false);
     //Close and Show Modal
@@ -19,7 +19,8 @@ const StockList = () => {
     const handleShow = () => setShow(true);
       
     const products = useSelector((state) => state.stockReducer.products);
-    
+    console.log(products.filter((product) => product.id))  
+
     useEffect(() => {
         dispatch(getProduct(dispatch));
       }, []);
@@ -27,10 +28,12 @@ const StockList = () => {
     const handleChanges = (e) => {
         setProduct({ ...product, [e.target.name]: e.target.value });
       };
+
     //search by name product
       const [query, setQuery] = useState("");
       const filtredProduct = products.filter((product) => {
-      return product.name_product.toLowerCase().includes(query.toLowerCase())})
+      return product.name_product.toLowerCase().includes(query.toLowerCase())})  
+
 
     return(
         <>
@@ -98,13 +101,15 @@ const StockList = () => {
               <svg onClick={() => dispatch(addQuantity(product.quantity_product, dispatch))} style={{marginRight:'1rem'}} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-plus-fill" viewBox="0 0 16 16">
                   <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0z"/>
               </svg>
-            
-           
-              <svg onClick={() => dispatch(deleteProduct(product.id, dispatch))} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+              
+              <svg color='red' onClick={() =>
+                
+                dispatch(deleteProduct(product.id, dispatch))}
+                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
                 <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
                 <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
               </svg>  
-        
+              
           </td>
           <td key={product.id}>{product.id}</td>
           <td>{product.quantity_product}</td>

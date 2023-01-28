@@ -27,12 +27,12 @@ export const addProduct = (product) => async (dispatch) => {
     }
   };
 
-  export const addQuantity = (id) => async (dispatch) => {
+  export const addQuantity = (quantity_product) => async (dispatch) => {
     try {
-      const response = await axios.post(`http://localhost:3000/products/${id}`);
+      const response = await axios.post(`http://localhost:3000/products/${quantity_product}`);
       console.log(response)
-      if (response.status === 201) {
-        dispatch({ type: "ADD_QUANTITY", payload: id });
+      if (response.status === 200) {
+        dispatch({ type: "ADD_QUANTITY", payload: quantity_product });
       } else {
         dispatch({ type: "ADD_QUANTITY_ERROR", payload: response });
       }

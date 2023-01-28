@@ -26,7 +26,7 @@ const initialeState = {
       case "ADD_QUANTITY":
           return {
             ...state,
-            quantity_product: state.quantity_product + action.payload,
+            products: state.products.filter((product) => product.quantity_product !== action.payload),         
           };  
       case "GET_PRODUCT_BY_ID":
         return {

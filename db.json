@@ -3,44 +3,51 @@
     {
       "id": 1,
       "name_product": "Rame Papier A4",
-      "quantity_product": "150",
+      "quantity_product": 150,
       "reference_product": "A4-528",
       "detail_product": "Rame Papier EVERYDAY - Format: A4 - Dimension: 21 x 29,7 cm - Nombre de Feuilles: 500 Feuilles - Grammage: 70G - Papier extra blanc, idéal pour une utilisation intensif au bureau."
     },
     {
       "id": 2,
       "name_product": "Bobine papier Thermique",
-      "quantity_product": "20",
+      "quantity_product": 20,
       "reference_product": "56x20 mm",
       "detail_product": "Compatible avec les imprimantes thermiques sur une large gamme d'appareils en audiologie, vestibulaire et rhinomanométriee.."
     },
     {
       "name_product": " Enveloppe 110 x 220",
-      "quantity_product": "2500",
+      "quantity_product": 2500,
       "reference_product": "DL - 110 x 220 mm",
       "detail_product": "Enveloppe 110 x 220 mm 1er prix - fenêtre 45x100 - blanche - auto-adhésive - 80g - boîte de 500",
       "id": 3
     },
     {
       "name_product": "  Enveloppe blanche DL 110 x 220",
-      "quantity_product": "3800",
+      "quantity_product": 3800,
       "reference_product": "S323043",
       "detail_product": "Idéale pour l'envoi de factures, cette enveloppe est opaque afin de garantir la sécurité des informations confidentielles.\nAvec notre enveloppe commerciale blanche Budget, envoyez vos documents du quotidien tels que vos factures ou vos autres documents administratifs Elle est dotée d'une fermeture autocollante avec bande protectrice pour une fermeture facile et une durabilité même en cas de stockage longue durée. Elle dispose d'un grammage de 80 g/m² permettant de limiter vos frais d'envoi. L'intérieur gris perle permet d'assurer la confidentialité du contenu : même en transparence, les informations restent confidentielles. Conçue pour contenir un ou plusieurs feuillets A4 pliés en trois ou A5 pliés en 2, les dimensions de l'enveloppe DL en font un choix classique des entreprises et des particuliers.\nEnveloppe commerciale blanche sans fenêtre",
       "id": 4
     },
     {
       "name_product": "LOT DE 5 BOITES D'ARCHIVES SUPER DOS10",
-      "quantity_product": "550",
+      "quantity_product": 550,
       "reference_product": "Référence : 3163",
       "detail_product": "Boite d'archive Dos 10mm - Carton imprimé - Etiquette imprimée sur le dos - Fermeture avec bouton pression - Format : 24 x 32 cm - Couleur Gris",
       "id": 5
     },
     {
       "name_product": "BOITE D'ARCHIVE COULEURS DOS10",
-      "quantity_product": "547",
+      "quantity_product": 547,
       "reference_product": "6192103150721",
       "detail_product": "Désignation du produit: Boite d’Archive Essential Dos 10cm - Dimension (Lxl) 245x337mm - Matière: Carton rigide  - Epaisseur matière: 1,9mm - Couleur Bleu  – Jaune – Rouge – Vert - Marque: OfficePlast (Purple) - Format à classer 24×32 cm - Capacité 900 feuilles . ",
       "id": 6
+    },
+    {
+      "name_product": "test",
+      "quantity_product": "555",
+      "reference_product": "test",
+      "detail_product": "4111",
+      "id": 7
     }
   ],
   "user": [
