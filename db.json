@@ -44,9 +44,9 @@
     },
     {
       "name_product": "test",
-      "quantity_product": "150",
+      "quantity_product": "55",
       "reference_product": "test",
-      "detail_product": "test",
+      "detail_product": "test\n",
       "id": 7
     }
   ],
