@@ -11,12 +11,16 @@ const StockList = () => {
         reference_product: "",
         detail_product: "",
       });
-      
 
     const [show, setShow] = useState(false);
     //Close and Show Modal
     const handleClose = () => setShow(false);
     const handleShow = () => setShow(true);
+
+    const [show2, setShow2] = useState(false);
+    //Close and Show Modal Delete yesy or no?
+    const handleClose2 = () => setShow2(false);
+    const handleShow2 = () => setShow2(true);
       
     const products = useSelector((state) => state.stockReducer.products);
     console.log(products.filter((product) => product.id))  
@@ -55,17 +59,12 @@ const StockList = () => {
             <Form.Control style={{margin:'1rem'}} as="textarea" placeholder="Détail du Produit" name='detail_product' onChange={handleChanges} />
             <Button
             onClick={() => {
-                dispatch(addProduct(product, dispatch));
+                dispatch(addProduct(product, dispatch)) && handleClose();
               }} 
             className='primary' 
             style={{ margin:'2rem' }}>Ajout Produit</Button>
         </div>
             </Modal.Body>
-        <Modal.Footer>
-          <Button variant="secondary" onClick={handleClose}>
-            Fermer
-          </Button>
-        </Modal.Footer>
       </Modal>
     </div>
     <h1>Etat du Stock</h1>
@@ -101,14 +100,37 @@ const StockList = () => {
               <svg onClick={() => dispatch(addQuantity(product.quantity_product, dispatch))} style={{marginRight:'1rem'}} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-plus-fill" viewBox="0 0 16 16">
                   <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0z"/>
               </svg>
-              
-              <svg color='red' onClick={() =>
-                
-                dispatch(deleteProduct(product.id, dispatch))}
-                xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
-                <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
-                <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
-              </svg>  
+
+
+              <a variant="primary" onClick={handleShow2}>
+                <svg color='red'
+                    xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-trash" viewBox="0 0 16 16">
+                    <path d="M5.5 5.5A.5.5 0 0 1 6 6v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm2.5 0a.5.5 0 0 1 .5.5v6a.5.5 0 0 1-1 0V6a.5.5 0 0 1 .5-.5zm3 .5a.5.5 0 0 0-1 0v6a.5.5 0 0 0 1 0V6z"/>
+                    <path fill-rule="evenodd" d="M14.5 3a1 1 0 0 1-1 1H13v9a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V4h-.5a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1H6a1 1 0 0 1 1-1h2a1 1 0 0 1 1 1h3.5a1 1 0 0 1 1 1v1zM4.118 4 4 4.059V13a1 1 0 0 0 1 1h6a1 1 0 0 0 1-1V4.059L11.882 4H4.118zM2.5 3V2h11v1h-11z"/>
+                </svg> 
+              </a>
+
+      <Modal
+        show={show2}
+        onHide={handleClose2}
+        backdrop="static"
+        keyboard={false}
+      >
+        <Modal.Header closeButton>
+          <Modal.Title>Vérification</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+        Êtes-vous sûr de vouloir supprimer?
+        </Modal.Body>
+        <Modal.Footer>
+          <Button variant="secondary" onClick={handleClose2}>
+            Annuler
+          </Button>
+          <Button onClick={() => dispatch(deleteProduct(product.id, dispatch)) && handleClose2() }
+                  variant="primary">Oui</Button>
+        </Modal.Footer>
+      </Modal>
+ 
               
           </td>
           <td key={product.id}>{product.id}</td>
