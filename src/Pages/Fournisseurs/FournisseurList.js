@@ -58,7 +58,7 @@ function FournisseursList() {
           <Form.Control style={{margin:'1rem'}} placeholder="Adresse Fournisseur" type='text' name='adress_fournisseur' onChange={handleChanges} />
           <Button
             onClick={() => {
-                dispatch(addFournisseur(fournisseur, dispatch));
+                dispatch(addFournisseur(fournisseur, dispatch)) && handleClose();
               }} 
             className='primary' 
             style={{ margin:'2rem' }}>Ajout Fournisseur</Button>

@@ -13,6 +13,9 @@ const StockList = () => {
         detail_product: "",
       });
 
+    //Close and Show Modal qantity
+    const [smShow, setSmShow] = useState(false);  
+
     const [show, setShow] = useState(false);
     //Close and Show Modal
     const handleClose = () => setShow(false);
@@ -24,7 +27,6 @@ const StockList = () => {
     const handleShow2 = () => setShow2(true);
       
     const products = useSelector((state) => state.stockReducer.products);
-    console.log(products.filter((product) => product.id))  
 
     useEffect(() => {
         dispatch(getProduct(dispatch));
@@ -97,11 +99,29 @@ const StockList = () => {
                 <>
         <tr>
           <td>
-            <Link>
-              <svg onClick={() => dispatch(addQuantity(product.quantity_product, dispatch))} style={{marginRight:'1rem'}} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-plus-fill" viewBox="0 0 16 16">
+          <Link>     
+              <svg onClick={() => setSmShow(true)} className="me-2" style={{marginRight:'1rem'}} xmlns="http://www.w3.org/2000/svg" width="25" height="25" fill="currentColor" class="bi bi-file-plus-fill" viewBox="0 0 16 16">
                   <path d="M12 0H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2zM8.5 6v1.5H10a.5.5 0 0 1 0 1H8.5V10a.5.5 0 0 1-1 0V8.5H6a.5.5 0 0 1 0-1h1.5V6a.5.5 0 0 1 1 0z"/>
               </svg>
-            </Link>
+          </Link>
+        <Modal
+        size="sm"
+        show={smShow}
+        onHide={() => setSmShow(false)}
+        aria-labelledby="example-modal-sizes-title-sm"
+      >
+        <Modal.Header closeButton>
+          <Modal.Title id="example-modal-sizes-title-sm">
+            Ajouter Quantités
+          </Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+          <Button>+</Button>
+          <Button>-</Button>
+        </Modal.Body>
+      </Modal>
+            
+            
 
               <Link striped bordered hover variant="primary" onClick={handleShow2}>
                 <svg color='red'
@@ -135,7 +155,17 @@ const StockList = () => {
               
           </td>
           <td key={product.id}>{product.id}</td>
-          <td>{product.quantity_product}</td>
+          <td>
+              <Form.Control style={{ color: product.quantity_product > 21
+                                  ? 'green'
+                                  : 'red',
+                              width:'5rem'    
+                                  }} 
+                      value={product.quantity_product}
+                      name='quantity_product'
+                      onChange={handleChanges}
+                      />
+          </td>
           <td>{product.name_product}</td>
           <td>{product.reference_product}</td>
           <td>

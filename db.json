@@ -48,6 +48,20 @@
       "reference_product": "test",
       "detail_product": "test\n",
       "id": 7
+    },
+    {
+      "name_product": "test 1 ",
+      "quantity_product": "1",
+      "reference_product": "1 ref",
+      "detail_product": "gsyhqbhkjdmslax l;qa ka",
+      "id": 8
+    },
+    {
+      "name_product": "test55",
+      "quantity_product": "55",
+      "reference_product": "55 ref",
+      "detail_product": "2",
+      "id": 9
     }
   ],
   "user": [
@@ -122,6 +136,14 @@
       "fax_fournisseur": "71 485 798",
       "adress_fournisseur": "rue el matador Fani, 1092 ariana",
       "id": 10
+    },
+    {
+      "name_fournisseur": "slam",
+      "email_fournisseur": "benna slama@gmail.comù",
+      "tel_fournisseur": "22457774",
+      "fax_fournisseur": "41555214",
+      "adress_fournisseur": "rue el salmlma  dzsuhb  ",
+      "id": 11
     }
   ]
 }
